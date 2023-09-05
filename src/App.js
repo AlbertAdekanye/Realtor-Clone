@@ -1,12 +1,25 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Offers from './pages/Offers';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   return (
-    <div className='text-center bg-gray-900'>
-      <h1 className='text-5xl text-white text-bold'>Hello, world!</h1>
-      <h3 className='text-white'>New Project Loading😊💕</h3>
-      <h2 className='text-white'>It is {new Date().toLocaleTimeString()}.</h2>
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/offers' element={<Offers />} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
+        </Routes>
+      </Router>
     </div>
     
   );
